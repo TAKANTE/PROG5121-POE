@@ -55,21 +55,21 @@ public class LoginTest {
     @Test
     public void testRegisterUser_Successful() {
         String expected = "Username, password, and cell phone number successfully captured.";
-        String actual = loginApp.registeredUser("kyl_1", "Ch&&sec@ke99l", "+27838968976");
+        String actual = loginApp.registerUser("kyl_1", "Ch&&sec@ke99l", "+27838968976");
         assertEquals(expected, actual);
     }
 
     @Test
     public void testRegisterUser_InvalidUsername() {
         String expected = "Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.";
-        String actual = loginApp.registeredUser("kyle!!!!!!", "Ch&&sec@ke99l", "+27838968976");
+        String actual = loginApp.registerUser("kyle!!!!!!", "Ch&&sec@ke99l", "+27838968976");
         assertEquals(expected, actual);
     }
 
     @Test
     public void testRegisterUser_InvalidPassword() {
         String expected = "Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number, and a special character.";
-        String actual = loginApp.registeredUser("kyl_1", "password", "+27838968976");
+        String actual = loginApp.registerUser("kyl_1", "password", "+27838968976");
         assertEquals(expected, actual);
     }
 

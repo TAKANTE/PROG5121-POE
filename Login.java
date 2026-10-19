@@ -31,12 +31,12 @@ public class Login {
 
     public boolean checkCellPhoneNumber(String cellNumber) {
         if (cellNumber == null) return false;
-        String phoneRegex = "^\\+\\d{1,3}\\d{4,10}$";
+        String phoneRegex = "^\\+27\\d{9}$";
         Pattern pattern = Pattern.compile(phoneRegex);
         Matcher matcher = pattern.matcher(cellNumber);
         return matcher.matches();
     }
-    public String registeredUser(String username,String password, String cellNumber) {
+    public String registerUser(String username,String password, String cellNumber) {
         if (!checkUserName(username)) {
             return "Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.";
         }
@@ -53,7 +53,7 @@ public class Login {
     }
     public String returnLoginStatus(boolean isLoggedIn, String firstName, String lastName) {
         if (isLoggedIn) {
-            return "Welcome " + firstName + " ," + lastName +" it is great to see you.";
+            return "Welcome " + firstName + "," + lastName +" it is great to see you again.";
         } else {
             return "Username or password incorrect, please try again.";
         }
